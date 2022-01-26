@@ -1,0 +1,14 @@
+//
+// Created by kuren on 26.01.2022.
+//
+
+#ifndef HUFFMANARCHIVER_HUFFMANBINARYTREE_HPP
+#define HUFFMANARCHIVER_HUFFMANBINARYTREE_HPP
+
+
+class huffmanBinaryTree {
+
+};
+
+
+#endif //HUFFMANARCHIVER_HUFFMANBINARYTREE_HPP

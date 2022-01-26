@@ -1,0 +1,14 @@
+//
+// Created by kuren on 26.01.2022.
+//
+
+#ifndef HUFFMANARCHIVER_HUFFMANALGORITHM_HPP
+#define HUFFMANARCHIVER_HUFFMANALGORITHM_HPP
+
+
+class HuffmanAlgorithm {
+
+};
+
+
+#endif //HUFFMANARCHIVER_HUFFMANALGORITHM_HPP
