@@ -19,8 +19,10 @@ std::vector<int> getFrequencyTable(const std::string &sourceFilePath, unsigned i
     if (in.eof()) {
       break;
     }
-    frequencyVector[symbol]++;
-    countOfBytes++;
+    if (symbol != '\r') {
+      frequencyVector[symbol]++;
+      countOfBytes++;
+    }
   }
   return frequencyVector;
 }
@@ -36,6 +38,7 @@ HuffmanBinaryTree createHuffmanBinaryTree(const std::vector<int> &frequencyVecto
     if (frequencyVector[i] != 0) {
       uniqueBytes++;
       auto *node = new HuffmanBinaryTree::HuffmanTreeNode(i, frequencyVector[i]);
+      std::cout << i << " - " << frequencyVector[i] << '\n';
       queue.push(HuffmanBinaryTree(node));
     }
   }
@@ -94,9 +97,11 @@ void createCodedFile(const std::string &sourceFilePath, const std::string &coded
     if (in.eof()) {
       break;
     }
-    std::vector<bool> temp = codeMap.find(symbol)->second;
-    for (auto i: temp) {
-      (i) ? out << '1' : out << '0';
+    if (symbol != '\r') {
+      std::vector<bool> temp = codeMap.find(symbol)->second;
+      for (auto i: temp) {
+        (i) ? out << '1' : out << '0';
+      }
     }
   }
 }
@@ -236,7 +241,6 @@ HuffmanBinaryTree convertFileToTree(const std::string &tableFilePath, unsigned i
   HuffmanBinaryTree tree(startNode);
   in >> countOfBytes;
   while (!in.eof()) {
-    std::cout << tree.getRoot()->key_.first;
     std::uint8_t currentSymbol = in.get();
     in.get();
     std::string branchesCode;
