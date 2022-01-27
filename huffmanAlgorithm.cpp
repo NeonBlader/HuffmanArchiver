@@ -25,30 +25,6 @@ std::vector<int> getFrequencyTable(const std::string &sourceFilePath, unsigned i
   return frequencyVector;
 }
 
-void demonstrateHuffmanAlgorithm(const std::string &sourceFilePath, const std::string &codesTablePath,
-    const std::string &codedFilePath, const std::string &decodedFilePath,
-    const std::string &compressedFilePath, const std::string &decompressedFilePath)
-{
-  if (sourceFilePath.empty()) {
-    throw std::logic_error("You can't demonstrate Huffman algorithm without source file path");
-  }
-
-  unsigned int countOfBytes;
-  std::vector<int> frequencyVector = getFrequencyTable(sourceFilePath,  countOfBytes);
-  HuffmanBinaryTree tree = createHuffmanBinaryTree(frequencyVector);
-
-  std::map<std::uint8_t, std::vector<bool>> codeMap;
-  std::vector<bool> code;
-  codeSymbols(tree, tree.getRoot(), code, codeMap);
-
-  createCodesTable(codeMap, codesTablePath, countOfBytes);
-  createCodedFile(sourceFilePath, codedFilePath, codeMap);
-  decodeFile(codedFilePath, decodedFilePath, tree);
-
-  compressFile(sourceFilePath, compressedFilePath, codeMap);
-  decompressFile(tree, compressedFilePath, decompressedFilePath, countOfBytes);
-}
-
 HuffmanBinaryTree createHuffmanBinaryTree(const std::vector<int> &frequencyVector)
 {
   if (frequencyVector.empty()) {
@@ -307,4 +283,28 @@ void autoDecompress(const std::string &tableFilePath, const std::string &compres
   unsigned int countOfBytes = 0;
   HuffmanBinaryTree tree = convertFileToTree(tableFilePath, countOfBytes);
   decompressFile(tree, compressedFilePath, decompressedFilePath,countOfBytes);
+}
+
+void demonstrateHuffmanAlgorithm(const std::string &sourceFilePath, const std::string &codesTablePath,
+                                 const std::string &codedFilePath, const std::string &decodedFilePath,
+                                 const std::string &compressedFilePath, const std::string &decompressedFilePath)
+{
+  if (sourceFilePath.empty()) {
+    throw std::logic_error("You can't demonstrate Huffman algorithm without source file path");
+  }
+
+  unsigned int countOfBytes;
+  std::vector<int> frequencyVector = getFrequencyTable(sourceFilePath,  countOfBytes);
+  HuffmanBinaryTree tree = createHuffmanBinaryTree(frequencyVector);
+
+  std::map<std::uint8_t, std::vector<bool>> codeMap;
+  std::vector<bool> code;
+  codeSymbols(tree, tree.getRoot(), code, codeMap);
+
+  createCodesTable(codeMap, codesTablePath, countOfBytes);
+  createCodedFile(sourceFilePath, codedFilePath, codeMap);
+  decodeFile(codedFilePath, decodedFilePath, tree);
+
+  compressFile(sourceFilePath, compressedFilePath, codeMap);
+  decompressFile(tree, compressedFilePath, decompressedFilePath, countOfBytes);
 }
