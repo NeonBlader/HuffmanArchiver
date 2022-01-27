@@ -19,17 +19,19 @@ public:
 
 private:
   struct HuffmanTreeNode {
-    explicit HuffmanTreeNode(std::uint8_t symbol, int frequency = 0, HuffmanBinaryTree::HuffmanTreeNode *left = nullptr, HuffmanBinaryTree::HuffmanTreeNode *right = nullptr);
+    explicit HuffmanTreeNode(std::uint8_t symbol, int frequency = 0, HuffmanBinaryTree::HuffmanTreeNode *left = nullptr,
+        HuffmanBinaryTree::HuffmanTreeNode *right = nullptr);
     std::pair<std::uint8_t, int> key_;
     HuffmanTreeNode *left_;
     HuffmanTreeNode *right_;
   };
 
   friend HuffmanBinaryTree createHuffmanBinaryTree(const std::vector<int> &frequencyVector);
-  friend std::map<std::uint8_t, std::vector<bool>> codeSymbols(const HuffmanBinaryTree &tree, HuffmanBinaryTree::HuffmanTreeNode *node, std::vector<bool> &code,std::map<std::uint8_t, std::vector<bool>> &map);
+  friend std::map<std::uint8_t, std::vector<bool>> codeSymbols(const HuffmanBinaryTree &tree,
+      HuffmanBinaryTree::HuffmanTreeNode *node, std::vector<bool> &code,std::map<std::uint8_t, std::vector<bool>> &map);
   friend void decodeFile(const std::string &codedFilePath, const std::string &decodedFilePath, const HuffmanBinaryTree &tree);
-  friend void decompressFile(const HuffmanBinaryTree &tree, const std::string &compressedFilePath, const std::string &decompressedFilePath,
-      unsigned int countOfBytes);
+  friend void decompressFile(const HuffmanBinaryTree &tree, const std::string &compressedFilePath,
+      const std::string &decompressedFilePath, unsigned int countOfBytes);
   friend HuffmanBinaryTree convertFileToTree(const std::string &tableFilePath, unsigned int &countOfBytes);
   friend void demonstrateHuffmanAlgorithm(const std::string &sourceFilePath, const std::string &codesTablePath,
       const std::string &codedFilePath, const std::string &decodedFilePath,

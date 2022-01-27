@@ -46,15 +46,16 @@ HuffmanBinaryTree createHuffmanBinaryTree(const std::vector<int> &frequencyVecto
     queue.pop();
     HuffmanBinaryTree secondTree = queue.top();
     queue.pop();
-    auto *node = new HuffmanBinaryTree::HuffmanTreeNode('\0', firstTree.getRoot()->key_.second + secondTree.getRoot()->key_.second, firstTree.move(), secondTree.move());
+    auto *node = new HuffmanBinaryTree::HuffmanTreeNode('\0', firstTree.getRoot()->key_.second + secondTree.getRoot()->key_.second,
+        firstTree.move(), secondTree.move());
     queue.push(HuffmanBinaryTree(node));
   }
   HuffmanBinaryTree tree = queue.top();
   return tree;
 }
 
-std::map<std::uint8_t, std::vector<bool>> codeSymbols(const HuffmanBinaryTree &tree, HuffmanBinaryTree::HuffmanTreeNode *node, std::vector<bool> &code,
-                 std::map<std::uint8_t, std::vector<bool>> &codeMap)
+std::map<std::uint8_t, std::vector<bool>> codeSymbols(const HuffmanBinaryTree &tree, HuffmanBinaryTree::HuffmanTreeNode *node,
+    std::vector<bool> &code, std::map<std::uint8_t, std::vector<bool>> &codeMap)
 {
   if (tree.getRoot() == nullptr) {
     throw std::logic_error("You can't create code map without Huffman's tree");
@@ -78,7 +79,7 @@ std::map<std::uint8_t, std::vector<bool>> codeSymbols(const HuffmanBinaryTree &t
 }
 
 void createCodedFile(const std::string &sourceFilePath, const std::string &codedFilePath,
-                     std::map<std::uint8_t, std::vector<bool>> &codeMap)
+    std::map<std::uint8_t, std::vector<bool>> &codeMap)
 {
   if (codeMap.empty()) {
     throw std::logic_error("You can't create coded file without code map");
@@ -136,7 +137,7 @@ void decodeFile(const std::string &codedFilePath, const std::string &decodedFile
 }
 
 void compressFile(const std::string &sourceFilePath, const std::string &compressedFilePath,
-                  std::map<std::uint8_t, std::vector<bool>> &codeMap)
+    std::map<std::uint8_t, std::vector<bool>> &codeMap)
 {
   if (codeMap.empty()) {
     throw std::logic_error("You can't compress file without code map");
@@ -289,8 +290,8 @@ void autoDecompress(const std::string &tableFilePath, const std::string &compres
 }
 
 void demonstrateHuffmanAlgorithm(const std::string &sourceFilePath, const std::string &codesTablePath,
-                                 const std::string &codedFilePath, const std::string &decodedFilePath,
-                                 const std::string &compressedFilePath, const std::string &decompressedFilePath)
+  const std::string &codedFilePath, const std::string &decodedFilePath,
+  const std::string &compressedFilePath, const std::string &decompressedFilePath)
 {
   if (sourceFilePath.empty()) {
     throw std::logic_error("You can't demonstrate Huffman algorithm without source file path");

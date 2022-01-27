@@ -1,9 +1,9 @@
 #include "huffmanBinaryTree.hpp"
 
 HuffmanBinaryTree::HuffmanTreeNode::HuffmanTreeNode(std::uint8_t symbol, int frequency, HuffmanBinaryTree::HuffmanTreeNode *left, HuffmanBinaryTree::HuffmanTreeNode *right):
-        key_({symbol, frequency}),
-        left_(left),
-        right_(right)
+    key_({symbol, frequency}),
+    left_(left),
+    right_(right)
 {}
 
 bool HuffmanBinaryTree::operator>(const HuffmanBinaryTree &other) const
