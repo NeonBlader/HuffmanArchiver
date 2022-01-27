@@ -2,7 +2,7 @@
 #define HUFFMAN_HUFFMANALGORITHM_HPP
 
 #include <iosfwd>
-#include <vector>f
+#include <vector>
 #include <queue>
 #include <map>
 #include <string>
