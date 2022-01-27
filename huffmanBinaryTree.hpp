@@ -2,7 +2,7 @@
 #define HUFFMAN_HUFFMANBINARYTREE_HPP
 
 #include <utility>
-#include <iosfwd>
+#include <string>
 #include <map>
 #include <cstdint>
 #include <vector>
