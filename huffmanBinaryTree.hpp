@@ -7,8 +7,6 @@
 #include <cstdint>
 #include <vector>
 
-class HuffmanAlgorithm;
-
 class HuffmanBinaryTree {
 public:
   HuffmanBinaryTree(const HuffmanBinaryTree &other);
@@ -21,7 +19,6 @@ public:
 
 private:
   struct HuffmanTreeNode {
-    HuffmanTreeNode(int symbol, int frequency, HuffmanBinaryTree::HuffmanTreeNode *left = nullptr, HuffmanBinaryTree::HuffmanTreeNode *right = nullptr);
     explicit HuffmanTreeNode(std::uint8_t symbol, int frequency = 0, HuffmanBinaryTree::HuffmanTreeNode *left = nullptr, HuffmanBinaryTree::HuffmanTreeNode *right = nullptr);
     std::pair<std::uint8_t, int> key_;
     HuffmanTreeNode *left_;

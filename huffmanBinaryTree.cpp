@@ -1,11 +1,5 @@
 #include "huffmanBinaryTree.hpp"
 
-HuffmanBinaryTree::HuffmanTreeNode::HuffmanTreeNode(int symbol, int frequency, HuffmanBinaryTree::HuffmanTreeNode *left, HuffmanBinaryTree::HuffmanTreeNode *right):
-        key_({static_cast<std::uint8_t>(symbol), frequency}),
-        left_(left),
-        right_(right)
-{}
-
 HuffmanBinaryTree::HuffmanTreeNode::HuffmanTreeNode(std::uint8_t symbol, int frequency, HuffmanBinaryTree::HuffmanTreeNode *left, HuffmanBinaryTree::HuffmanTreeNode *right):
         key_({symbol, frequency}),
         left_(left),
