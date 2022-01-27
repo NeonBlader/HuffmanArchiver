@@ -286,7 +286,7 @@ void autoDecompress(const std::string &tableFilePath, const std::string &compres
 {
   unsigned int countOfBytes = 0;
   HuffmanBinaryTree tree = convertFileToTree(tableFilePath, countOfBytes);
-  decompressFile(tree, compressedFilePath, decompressedFilePath,countOfBytes);
+  decompressFile(tree, compressedFilePath, decompressedFilePath, countOfBytes);
 }
 
 void demonstrateHuffmanAlgorithm(const std::string &sourceFilePath, const std::string &codesTablePath,
