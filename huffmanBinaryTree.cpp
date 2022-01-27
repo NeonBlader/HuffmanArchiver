@@ -65,7 +65,7 @@ HuffmanBinaryTree &HuffmanBinaryTree::operator=(const HuffmanBinaryTree &other)
   return *this;
 }
 
-HuffmanBinaryTree::HuffmanTreeNode *HuffmanBinaryTree::getRoot()
+HuffmanBinaryTree::HuffmanTreeNode *HuffmanBinaryTree::getRoot() const
 {
   return root_;
 }
