@@ -38,7 +38,6 @@ HuffmanBinaryTree createHuffmanBinaryTree(const std::vector<int> &frequencyVecto
     if (frequencyVector[i] != 0) {
       uniqueBytes++;
       auto *node = new HuffmanBinaryTree::HuffmanTreeNode(i, frequencyVector[i]);
-      std::cout << i << " - " << frequencyVector[i] << '\n';
       queue.push(HuffmanBinaryTree(node));
     }
   }
