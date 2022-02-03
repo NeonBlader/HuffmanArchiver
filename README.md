@@ -35,8 +35,8 @@ After including the huffmanAlgorithm.hpp, three functions will become available 
 The Huffman algorithm is designed in such a way that the fewer unique characters are present in the file, the more memory gain it can give.  
 Below is the memory gain that this implementation of the algorithm allows to obtain for a 6 kilobyte file with a different number of unique characters.
 
-![Memory benefit graphic](https://imgur.com/a/3txjf6T)
+![Memory benefit graphic](https://i.imgur.com/p5Q1Xh2.png)
 
 I also present a graph of the time spent on compressing a file consisting of 7 different characters, duplicated a different number of times.
 
-![Time usage graphic](https://imgur.com/a/Ef3ZRqH)
+![Time usage graphic](https://i.imgur.com/rN7i2b2.png)
