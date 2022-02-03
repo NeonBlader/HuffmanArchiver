@@ -173,7 +173,7 @@ void compressFile(const std::string &sourceFilePath, const std::string &compress
 }
 
 void decompressFile(const HuffmanBinaryTree &tree, const std::string &compressedFilePath, const std::string &decompressedFilePath,
-  unsigned int countOfBytes)
+    unsigned int countOfBytes)
 {
   if (tree.getRoot() == nullptr) {
     throw std::logic_error("You can't decompress file without Huffman tree");
