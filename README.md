@@ -37,6 +37,6 @@ Below is the memory gain that this implementation of the algorithm allows to obt
 
 ![Memory benefit graphic](https://i.imgur.com/p5Q1Xh2.png)
 
-I also present a graph of the time spent on compressing a file consisting of 7 different characters, duplicated a different number of times.
+I also present a graph of the time spent on compressing a file consisting of 7 unique characters, duplicated a different number of times.
 
 ![Time usage graphic](https://i.imgur.com/rN7i2b2.png)
