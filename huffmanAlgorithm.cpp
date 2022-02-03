@@ -4,6 +4,11 @@
 #include <queue>
 #include <fstream>
 #include <stdexcept>
+#include <vector>
+#include <map>
+#include <cstdint>
+
+#include "huffmanBinaryTree.hpp"
 
 const std::size_t BITS_COUNT = 8;
 

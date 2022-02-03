@@ -1,14 +1,7 @@
 #ifndef HUFFMAN_HUFFMANALGORITHM_HPP
 #define HUFFMAN_HUFFMANALGORITHM_HPP
 
-#include <iosfwd>
-#include <vector>
-#include <queue>
-#include <map>
 #include <string>
-#include <cstdint>
-
-#include "huffmanBinaryTree.hpp"
 
 void demonstrateHuffmanAlgorithm(const std::string &sourceFilePath, const std::string &codesTablePath = "codes_table.txt",
     const std::string &codedFilePath = "coded_file.txt", const std::string &decodedFilePath = "decoded_file.txt",
